@@ -13,12 +13,15 @@ public class Main {
         myLL.addListNodeToTheEndOfLinkedList(50);
         myLL.traverseTheLinkedList();
         int ans = myLL.countNodesofLinkedList();
-        System.out.print(ans);
+       // System.out.print(ans);
 
         System.out.println("--------------------");
 
         myLL.deleteTheLastListNode();
         myLL.traverseTheLinkedList();
-        System.out.println(myLL.countNodesofLinkedList());
+        //System.out.println(myLL.countNodesofLinkedList());
+        System.out.println("--------------------");
+        myLL.deleteTheNodeAtKthPosition(0);
+        myLL.traverseTheLinkedList();
     }
 }

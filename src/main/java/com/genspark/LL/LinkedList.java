@@ -78,4 +78,25 @@ public class LinkedList {
         // breaking the chain
         temp2.setNext(null);
     }
+
+    void deleteTheNodeAtKthPosition(int k) {
+
+          if(k == 0) {
+              head = head.getNext();
+              return;
+          }
+//        k is the index on the node[delete]
+          ListNode temp1 = head;
+          ListNode temp2 = null;
+
+          for(int i = 0; i <= k ; i++) {
+                temp2 = temp1;
+                temp1 = temp1.getNext();
+          }
+          // temp1 is point at the node[delete].
+         // temp2 io at k-1th position.
+          ListNode addressOFNextToNextNode = temp1.getNext();
+          temp2.setNext(null); // doing nothing...
+          temp2.setNext(addressOFNextToNextNode);
+    }
 }
