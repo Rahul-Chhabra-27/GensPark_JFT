@@ -1,4 +1,4 @@
-package com.genspark.LL;
+package com.genspark.stack;
 
 public class ListNode {
     // Information part
@@ -29,4 +29,3 @@ public class ListNode {
         this.next = next;
     }
 }
-//we are taking about linked list of whole number.

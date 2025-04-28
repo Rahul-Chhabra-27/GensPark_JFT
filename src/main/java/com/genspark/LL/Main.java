@@ -1,5 +1,7 @@
 package com.genspark.LL;
 
+import java.util.Stack;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -23,5 +25,10 @@ public class Main {
         System.out.println("--------------------");
         myLL.deleteTheNodeAtKthPosition(0);
         myLL.traverseTheLinkedList();
+
+
+        Stack<Integer> stack = new Stack();
+        // Stack => Arrays
+        // Stack => LinkedList
     }
 }
