@@ -176,3 +176,99 @@ Abstract Method ==> Method with no body, only structure is given
 Interfaces
 1. we can create only abstract methods.
 2. we can create methods with body
+
+-----------------interfaces way-----------------------------------
+
+public interface LoginAuth {
+    we can't do this with interfaces.
+    public String encryptPassword() {
+        Implements the same default behaviour here that is shared
+        by all the subclasses.
+    }
+    public void checkDBforUser();
+
+}
+
+class DBSQL implements LoginAuth {
+    @Override
+    public String encryptPassword() {
+
+    }
+    @Override
+    public void checkDBforUser(){
+
+    }
+}
+class DBOracle implements LoginAuth {
+    @Override
+    public String encryptPassword() {
+        Same for same db
+    }
+    @Override
+    public void checkDBforUser(){
+
+    }
+}
+class DBMongo implements LoginAuth {
+    @Override
+    public String encryptPassword() {
+
+    }
+    @Override
+    public void checkDBforUser(){
+
+    }
+}
+
+-------------Abstract Classes --------------------------
+
+public abtract class LoginAuth {
+    public String encryptPassword() {
+        implements the same default behaviour here that is shared
+        by all the subclasses.
+    }
+    public abstract void checkDBforUser();
+}
+
+class DBSQL extends LoginAuth {
+
+    @Override
+    public void checkDBforUser(){
+
+    }
+}
+class DBOracle extends LoginAuth {
+
+    @Override
+    public void checkDBforUser(){
+
+    }
+}
+class DBMongo extends LoginAuth {
+
+    @Override
+    public void checkDBforUser(){
+
+    }
+}
+
+Let's consider a scenario where encryptPassword is same for every db.
+
+
+1.Interfaces are rules (rules because you must give an implementation to them that you can't
+ignore or avoid, so that they are imposed like rules) which works as a common understanding
+document among various teams in software development.
+
+2.Interfaces give the idea what is to be done but not how it will be done.
+So implementation completely depends on developer by following the given rules
+(means given signature of methods).
+
+3.Abstract classes may contain abstract declarations,
+concrete implementations, or both.
+
+4.Abstract declarations are like rules to be followed and
+concrete implementations are like guidelines (you can use it as it is or
+you can ignore it by overriding and giving your own implementation to it).
+
+5.Moreover which methods with same signature may change the behaviour in different context
+are provided as interface declarations as rules to implement accordingly in different contexts.
