@@ -1,0 +1,178 @@
+Way 1
+
+class Wrestler {
+    money amountCharge() {
+        print("This wrestler charges $100");
+    }
+    music starting theme() {
+        ....
+    }
+    music ending theme() {
+        ....
+    }
+}
+
+Wrestler undertaker = new Wrestler();
+Wrestler kane = new Wrestler();
+
+undertaker.amountCharge(); // $100
+kane.amountCharge(); // $100
+
+undertaker charges => $100
+kane charges ==> $50
+
+
+Way 2
+
+
+Sometimes in real worlds we identify the identity of the entity
+by their methods.
+
+Class Wrestler {
+    money amountCharge() {
+        print("This wrestler charges $100"); // useless here
+    }
+    music starting theme() {
+       this is the music
+    }
+    music ending theme() {
+       this is the ending music
+    }
+}
+
+class Undertaker extends Wrestler {
+    @Override
+    money amountCharge() {
+        print("This wrestler charges $100");
+    }
+    @Override
+    music starting theme() {
+        this is the theme of undertaker
+    }
+    @Override
+    music ending theme() {
+         this is the ending theme of undertaker
+    }
+}
+
+class Kane extends Wrestler {
+    @Override
+    money amountCharge() {
+        print("This wrestler charges $50");
+    }
+    @Override
+    music starting theme() {
+        this is the theme of kane
+    }
+    @Override
+    music ending theme() {
+        this is the ending theme of kane
+    }
+}
+
+
+
+
+
+
+
+Way 3 Modified way 2
+
+
+Sometimes in real worlds we identify the identity of the entity
+by their methods.
+
+Class Wrestler {
+    money amountCharge() {
+        print("This wrestler charges $100"); // useless here
+    }
+    music starting theme() {
+       this is the music
+    }
+    music ending theme() {
+       this is the ending music
+    }
+    health healthChecUpReport() {
+        .....
+    }
+}
+
+class Undertaker extends Wrestler {
+    @Override
+    money amountCharge() {
+        print("This wrestler charges $100");
+    }
+    @Override
+    music starting theme() {
+        this is the theme of undertaker
+    }
+    @Override
+    music ending theme() {
+         this is the ending theme of undertaker
+    }
+    @Override
+    health healthChecUpReport() {
+        .....
+    }
+}
+
+class Kane extends Wrestler {
+    @Override
+    money amountCharge() {
+        print("This wrestler charges $50");
+    }
+    @Override
+    music starting theme() {
+        this is the theme of kane
+    }
+    @Override
+    music ending theme() {
+        this is the ending theme of kane
+    }
+    @Override
+    health healthChecUpReport() {
+        .....
+    }
+}
+
+class AjStyles extends Wrestler {
+    @Override
+    money amountCharge() {
+        print("This wrestler charges $150");
+    }
+}
+// Ways of creating the wrestlers.
+Undertaker undertaker = new Undertaker();
+Kane undertaker = new Kane();
+
+// Can we do this.
+
+Problems
+
+1.Wrestler undertaker = new Wrestler();
+2.We want every wrestler to have starting theme, ending theme as well as healthCheckUpReport.
+
+
+
+Solution
+1. There should be no object creating of parent class [eg Wrestler undertaker != new Wrestler();]
+2. Every Wrestler should forcefully add starting theme,
+ ending theme as well as healthCheckUpReport.
+
+We can solve this problem by using Abstract classes as well as Interfaces.
+
+What will happen if we make a class ==> abstract class
+
+1. We can't create a object of abstract class.
+2. All the methods which are abstract in the abstract class should be present
+in all the sub classes of the asbtract class.
+
+
+3. Inside the abstract class we can create abstract methods, not-abstract methods
+Abstract Method ==> Method with no body, only structure is given
+
+
+
+Interfaces
+1. we can create only abstract methods.
+2. we can create methods with body
