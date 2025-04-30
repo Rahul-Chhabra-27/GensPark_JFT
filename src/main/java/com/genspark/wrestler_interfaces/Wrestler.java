@@ -7,4 +7,5 @@ public interface Wrestler {
     void startingTheme();
     void EndingTheme();
     String healthCheckUpReport();
+
 }
